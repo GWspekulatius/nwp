@@ -64,7 +64,7 @@ main(int argc, char **argv)
 	FD_ZERO(&rset);
 	while(done<2){
 		if(done==0)
-			FD_SET(0,&rset);	
+			FD_SET(0,&rset);
 		FD_SET(fd,&rset);
 		Select(fd+1,&rset,NULL,NULL,NULL);
 
@@ -79,7 +79,7 @@ main(int argc, char **argv)
 				Send(fd,(const void*) buf,(size_t)n,0);
 			}
 		}
-		
+
 		//server
 		if (FD_ISSET(fd, &rset)) {
 			n = Recv(fd, (void *) buf, sizeof(buf), 0);
